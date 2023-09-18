@@ -249,13 +249,17 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
   * @param  Len: Number of data received (in bytes)
   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
   */
+extern	void USB_TxCpltCallback(void);
 static int8_t CDC_TransmitCplt_FS(uint8_t *Buf, uint32_t *Len, uint8_t epnum)
 {
   uint8_t result = USBD_OK;
   /* USER CODE BEGIN 14 */
+  /*
   UNUSED(Buf);
   UNUSED(Len);
   UNUSED(epnum);
+  */
+  USB_TxCpltCallback();
   /* USER CODE END 14 */
   return result;
 }
