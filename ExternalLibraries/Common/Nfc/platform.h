@@ -33,7 +33,7 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 
 #include "stm32h5xx_hal.h"
-#include "../../../A_os/Drivers/STM32H5/Platform_STM32H5xx/Platform_STM32H5xx.h"
+#include "../../../Drivers/STM32H5/Platform_STM32H5xx/Platform_STM32H5xx.h"
 
 #include "main.h"
 #include <stdint.h>
