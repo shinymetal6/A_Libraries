@@ -24,11 +24,21 @@
 #define INCLUDE_PATHS_H_
 /*
  *
- * STM32U5 includes
+STM32U5 includes
+USB:
 ../../A_Libraries/ExternalLibraries/STM32U5/STM32_USB_Device_Library/Class/CDC
 ../../A_Libraries/Drivers/STM32U5/Usb_Device/Target
 ../../A_Libraries/ExternalLibraries/STM32U5/STM32_USB_Device_Library/Core
 
-
+STM32H5 includes
+USB:
+../../A_Libraries/ExternalLibraries/STM32H5/STM32_USB_Device_Library/Class/CDC/Inc
+../../A_Libraries/Drivers/STM32H5/USB_Device/Target
+../../A_Libraries/ExternalLibraries/STM32H5/STM32_USB_Device_Library/Core/Inc
+LWIP:
+../../A_Libraries/Drivers/STM32H5/LWIP/Target
+../../A_Libraries/ExternalLibraries/STM32H5/LwIP/system
+../../A_Libraries/ExternalLibraries/STM32H5/LwIP/src/include
+../../A_Libraries/Components/lan8742
 */
 #endif /* INCLUDE_PATHS_H_ */
