@@ -43,10 +43,13 @@ LWIP:
 NFC:
 CRC and SPI1 must be enabled
 SPI1 must have PLL3P @ 40 MHz ( DIVN 100 DIVQ10 ), 2 edges, 8 bit, motorola format -> 5MHz clock
+../../A_Libraries/ExternalLibraries/Common/Nfc/rfal/Src
+../../A_Libraries/ExternalLibraries/Common/Nfc
 ../../A_Libraries/ExternalLibraries/Common/Nfc/ndef/Inc
 ../../A_Libraries/ExternalLibraries/Common/Nfc/ndef/Inc/message
 ../../A_Libraries/ExternalLibraries/Common/Nfc/ndef/Inc/poller
 ../../A_Libraries/ExternalLibraries/Common/Nfc/rfal/Inc
 ../../A_Libraries/Components/ST25R3916
+
 */
 #endif /* INCLUDE_PATHS_H_ */
