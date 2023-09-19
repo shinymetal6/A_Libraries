@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file           USB_Device/CDC_Standalone/USB_Device/App/usbd_desc.c
+  * @file           usbd_CDC_desc.c
   * @author         MCD Application Team
   * @brief          This file implements the USB device descriptors.
   ******************************************************************************

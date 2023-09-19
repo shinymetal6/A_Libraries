@@ -23,13 +23,24 @@
 #ifndef INCLUDE_PATHS_H_
 #define INCLUDE_PATHS_H_
 /*
+ALL platform, to exclude errors for duplicated symbols in file stm32h5xx_it.c :
+1) set #ifdef A_NOT_USED circa @ line 79, after the closing } of the while in void NMI_Handler(void)
+2) set #endif circa @ line 152 after   USER CODE BEGIN SVCall_IRQn 1 comment, before the } of void SVC_Handler(void)
+3) set #ifdef A_NOT_USED circa @ line 166, after the closing } after USER CODE BEGIN DebugMonitor_IRQn 1 in DebugMon_Handler
+4) set #endif circa @ line 194 after USER CODE BEGIN SysTick_IRQn 1 comment, before the } of void SysTick_Handler(void)
+All platform to start A:
+1) set A_init_mem(); between  USER CODE BEGIN SysInit  and USER CODE END SysInit
+2) set A_start(); between USER CODE BEGIN 2 and USER CODE END 2
+Those will raise 2 warning for implicit declaration, it's your choice to include the declarations somewhere
+
+
  *
 STM32U5 includes
 USB:
 ../../A_Libraries/ExternalLibraries/STM32U5/STM32_USB_Device_Library/Class/CDC
 ../../A_Libraries/Drivers/STM32U5/Usb_Device/Target
 ../../A_Libraries/ExternalLibraries/STM32U5/STM32_USB_Device_Library/Core
-
+Exclude from compilation A_Libraries/Drivers/STM32H5/USB_Device/App/usbd_HID_desc.c or A_Libraries/Drivers/STM32H5/USB_Device/App/usbd_CDC_desc.c
 STM32H5 includes
 USB:
 ../../A_Libraries/ExternalLibraries/STM32H5/STM32_USB_Device_Library/Class/CDC/Inc
