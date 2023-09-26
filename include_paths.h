@@ -41,6 +41,7 @@ USB:
 ../../A_Libraries/Drivers/STM32U5/Usb_Device/Target
 ../../A_Libraries/ExternalLibraries/STM32U5/STM32_USB_Device_Library/Core
 Exclude from compilation A_Libraries/Drivers/STM32H5/USB_Device/App/usbd_HID_desc.c or A_Libraries/Drivers/STM32H5/USB_Device/App/usbd_CDC_desc.c
+
 STM32H5 includes
 USB:
 ../../A_Libraries/ExternalLibraries/STM32H5/STM32_USB_Device_Library/Class/CDC/Inc
@@ -61,6 +62,42 @@ SPI1 must have PLL3P @ 40 MHz ( DIVN 100 DIVQ10 ), 2 edges, 8 bit, motorola form
 ../../A_Libraries/ExternalLibraries/Common/Nfc/ndef/Inc/poller
 ../../A_Libraries/ExternalLibraries/Common/Nfc/rfal/Inc
 ../../A_Libraries/Components/ST25R3916
+
+STM32F7 includes
+USB:
+../../A_Libraries/Drivers/STM32F7/USB_Host/Target
+../../A_Libraries/Drivers/STM32F7/USB_Host/App
+../../A_Libraries/Drivers/STM32F7/USB_Device/App
+../../A_Libraries/Drivers/STM32F7/USB_Device/Target
+../../A_Libraries/ExternalLibraries/STM32F7/STM32_USB_Device_Library/Class/CDC/Inc
+../../A_Libraries/ExternalLibraries/STM32F7/STM32_USB_Host_Library/Class/AUDIO/Inc
+../../A_Libraries/ExternalLibraries/STM32F7/STM32_USB_Host_Library/Class/CDC/Inc
+../../A_Libraries/ExternalLibraries/STM32F7/STM32_USB_Host_Library/Class/HID/Inc
+../../A_Libraries/ExternalLibraries/STM32F7/STM32_USB_Host_Library/Class/MSC/Inc
+../../A_Libraries/ExternalLibraries/STM32F7/STM32_USB_Host_Library/Class/MTP/Inc
+../../A_Libraries/ExternalLibraries/STM32F7/STM32_USB_Host_Library/Core/Inc
+../../A_Libraries/ExternalLibraries/STM32F7/STM32_USB_Device_Library/Core/Inc
+LWIP
+../../A_Libraries/Drivers/STM32F7/LwIP/App
+../../A_Libraries/Drivers/STM32F7/LwIP/Target
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/system
+../../A_Libraries/Drivers/Common/Components/Network/lan8742
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/netif/ppp
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/lwip
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/lwip/apps
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/lwip/priv
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/lwip/prot
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/netif
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/compat/posix
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/compat/posix/arpa
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/compat/posix/net
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/compat/posix/sys
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/compat/stdc
+../../A_Libraries/ExternalLibraries/STM32F7/LwIP/system/arch
+FAT
+../../A_Libraries/ExternalLibraries/STM32F7/FatFs/src
+../../A_Libraries/Drivers/STM32F7/FatFS/Target
 
 */
 #endif /* INCLUDE_PATHS_H_ */

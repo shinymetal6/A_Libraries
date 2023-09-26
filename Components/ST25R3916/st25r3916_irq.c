@@ -88,6 +88,8 @@ void st25r3916Isr( void )
     // Check if callback is set and run it
     if( NULL != st25r3916interrupt.callback )
     {
+    	extern uint8_t irq_done;
+    	irq_done = 1;
         st25r3916interrupt.callback();
     }
 }
