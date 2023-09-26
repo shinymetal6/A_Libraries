@@ -26,6 +26,8 @@
 #include "lwip/sio.h"
 #endif /* MDK ARM Compiler */
 #include "ethernetif.h"
+#include "../../../../A_os/kernel/A.h"
+#include "../../../../A_os/kernel/system_default.h"
 
 /* USER CODE BEGIN 0 */
 
@@ -57,7 +59,9 @@ ip4_addr_t gw;
 /**
   * LwIP initialization function
   */
-void MX_LWIP_Init(void)
+
+
+void MX_LWIP_Init(A_IpAddr_t *A_IpAddr)
 {
   /* Initilialize the LwIP stack without RTOS */
   lwip_init();
@@ -66,6 +70,19 @@ void MX_LWIP_Init(void)
   ipaddr.addr = 0;
   netmask.addr = 0;
   gw.addr = 0;
+
+#if LWIP_DHCP
+  ip_addr_set_zero_ip4(&ipaddr);
+  ip_addr_set_zero_ip4(&netmask);
+  ip_addr_set_zero_ip4(&gw);
+#else
+
+  /* IP address default setting */
+  IP4_ADDR(&ipaddr, A_IpAddr->IP_ADDR0, A_IpAddr->IP_ADDR1, A_IpAddr->IP_ADDR2, A_IpAddr->IP_ADDR3);
+  IP4_ADDR(&netmask, A_IpAddr->NETMASK_ADDR0, A_IpAddr->NETMASK_ADDR1 , A_IpAddr->NETMASK_ADDR2, A_IpAddr->NETMASK_ADDR3);
+  IP4_ADDR(&gw, A_IpAddr->GW_ADDR0, A_IpAddr->GW_ADDR1, A_IpAddr->GW_ADDR2, A_IpAddr->GW_ADDR3);
+
+#endif
 
   /* add the network interface (IPv4/IPv6) without RTOS */
   netif_add(&gnetif, &ipaddr, &netmask, &gw, NULL, &ethernetif_init, &ethernet_input);
@@ -90,8 +107,9 @@ void MX_LWIP_Init(void)
   /* Create the Ethernet link handler thread */
 
   /* Start DHCP negotiation for a network interface (IPv4) */
+#if LWIP_DHCP
   dhcp_start(&gnetif);
-
+#endif
 /* USER CODE BEGIN 3 */
 
 /* USER CODE END 3 */
@@ -109,6 +127,8 @@ void MX_LWIP_Init(void)
   * @param  netif
   * @retval None
   */
+extern	A_IpAddr_t	A_DhcpIpAddr;
+
 static void Ethernet_Link_Periodic_Handle(struct netif *netif)
 {
 /* USER CODE BEGIN 4_4_1 */
@@ -119,6 +139,16 @@ static void Ethernet_Link_Periodic_Handle(struct netif *netif)
   {
     EthernetLinkTimer = HAL_GetTick();
     ethernet_link_check_state(netif);
+#if LWIP_DHCP
+    A_DhcpIpAddr.GW_ADDR0 = netif->gw.addr >> 24;
+    A_DhcpIpAddr.GW_ADDR1 = netif->gw.addr >> 16;
+    A_DhcpIpAddr.GW_ADDR2 = netif->gw.addr >> 8;
+    A_DhcpIpAddr.GW_ADDR3 = netif->gw.addr >> 0;
+    A_DhcpIpAddr.IP_ADDR0 = netif->ip_addr.addr >> 24;
+    A_DhcpIpAddr.IP_ADDR1 = netif->ip_addr.addr >> 16;
+    A_DhcpIpAddr.IP_ADDR2 = netif->ip_addr.addr >> 8;
+    A_DhcpIpAddr.IP_ADDR3 = netif->ip_addr.addr >> 0;
+#endif
   }
 /* USER CODE BEGIN 4_4 */
 /* USER CODE END 4_4 */
