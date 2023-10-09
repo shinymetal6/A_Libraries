@@ -50,11 +50,8 @@ void A_modbus_init(uint8_t address,uint8_t mode)
 	HAL_CRC_DeInit(&hcrc);
 	A_modbus_CRC_Init();
 #endif
-	A_modbus.modbus_addr = address;
-	A_modbus.rx_packet_index = A_modbus.rx_byte_index = 0;
-	A_modbus.modbus_rx_state = A_MODBUS_RTU_ADDRESS_PHASE;
 	A_modbus.modbus_state = mode;
-	A_modbus.modbus_timer = 0;
+	A_modbus.modbus_addr = address;
 }
 
 uint8_t A_modbus_process(uint8_t *buf, uint16_t len)

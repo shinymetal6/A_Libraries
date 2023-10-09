@@ -57,18 +57,9 @@ typedef struct {
 	uint8_t		tx_packet[A_MODBUS_PKT_SIZE];
 	uint8_t		tx_packet_len;
 	uint16_t 	crc;
-	uint8_t		rx_packet[A_MODBUS_PKT_SIZE];
-	uint8_t		rx_packet_index;
-	uint8_t		rx_byte_index;
-	uint8_t		rx_packet_len;
-	uint8_t		modbus_rx_state;
-	uint32_t 	modbus_timer;
 } A_modbus_t;
 
 /* modbus_state */
-#define	MODBUS_PACKET_READY				0x02
-#define	MODBUS_BYTE_RCVD				0x01
-#define	MODBUS_ASCII_MODE				0x40
 #define	MODBUS_RTU_MODE					0x80
 
 #define	NUM_MUL_REG						4

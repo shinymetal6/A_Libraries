@@ -342,9 +342,6 @@ uint8_t	ret_val = 1;
 	if ( ret_val  )
 		A_rtu_modbus_exception(buf,A_MODBUS_RTU_ERR_ILLEGAL_FC);
 	hw_send_uart(A_modbus.tx_packet, A_modbus.tx_packet_len);
-
-	A_modbus.modbus_state &= ~MODBUS_PACKET_READY;
-	A_modbus.modbus_rx_state = A_MODBUS_RTU_ADDRESS_PHASE;
 	return ret_val;
 }
 
