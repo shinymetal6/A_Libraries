@@ -36,8 +36,36 @@ __weak uint8_t A_write_coil_from_modbus(uint16_t coil_index, uint8_t coil_value)
 	return 0;
 }
 
-__weak uint8_t A_write_reg_from_modbus(uint8_t register_index, uint16_t register_value)
+__weak uint8_t A_write_reg_from_modbus(uint16_t register_index, uint8_t register_value)
 {
+	return 0;
+}
+
+uint8_t A_set_in_to_modbus(uint16_t discrete_in_index, uint8_t discrete_in_value)
+{
+uint16_t		byte_index,temp_in_index;
+	if ( discrete_in_index >= A_MAX_DISCRETE_IN)
+		return 1;
+	byte_index = discrete_in_index/8;
+	temp_in_index = discrete_in_index - byte_index*8;
+	if ( discrete_in_value )
+		A_modbus_inout.discrete_input[byte_index] |= 1 << temp_in_index;
+	else
+		A_modbus_inout.discrete_input[byte_index] &= ~(1 << temp_in_index);
+	return 0;
+}
+
+uint8_t A_get_reg_from_modbus(uint8_t register_index)
+{
+	if ( register_index < A_MAX_REGS)
+		return A_modbus_inout.holding_registers[register_index];
+	return 0;
+}
+
+uint8_t A_set_reg_to_modbus(uint8_t register_index, uint8_t register_value)
+{
+	if ( register_index < A_MAX_REGS)
+		A_modbus_inout.holding_registers[register_index] = register_value;
 	return 0;
 }
 
