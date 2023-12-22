@@ -28,6 +28,7 @@
 extern	UART_HandleTypeDef 					huart1;
 #define	MODBUS_UART							huart1
 
+//#define	A_MODBUS_SW_CRC							1
 #ifndef A_MODBUS_SW_CRC
 extern	CRC_HandleTypeDef 					hcrc;
 #define	MODBUS_CRC							hcrc
