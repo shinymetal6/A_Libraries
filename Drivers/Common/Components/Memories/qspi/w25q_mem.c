@@ -67,17 +67,17 @@ static inline uint32_t page_to_addr(uint32_t pageNum, uint8_t pageShift); ///< T
  * @brief W25Q Init function
  *
  * @param none
- * @return W25Q_STATE enum
+ * @return uint8_t id
  */
-W25Q_STATE W25Q_Init(void) {
-	W25Q_STATE state;		// temp status variable
+uint8_t W25Q_Init(void)
+{
+W25Q_STATE state;		// temp status variable
+uint8_t id = 0;
 
 	// read id
-	uint8_t id = 0;
 	state = W25Q_ReadID(&id);
 	if (state != W25Q_OK)
 		return state;
-	// u can check id here
 
 	// read chip's state to private lib's struct
 	state = W25Q_ReadStatusStruct(NULL);
@@ -123,7 +123,7 @@ W25Q_STATE W25Q_Init(void) {
 	// make another read
 	state = W25Q_ReadStatusStruct(NULL);
 	// return communication status
-	return state;
+	return id;
 }
 
 /**
