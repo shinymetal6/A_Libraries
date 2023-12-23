@@ -20,10 +20,11 @@
  *      Author: fil
  */
 #include "main.h"
+#include "../../../../../../A_os/kernel/A.h"
 #include "../../../../../../A_os/kernel/system_default.h"
 #include "qspi.h"
 
-//extern	Asys_t			Asys;
+extern	Asys_t			Asys;
 
 #if defined QSPI_ENABLED
 #if defined QSPI_WINBOND
@@ -32,10 +33,7 @@ uint8_t	qspi_id[8];
 
 QSPI_HandleTypeDef *qspi_init(void)
 {
-	//Asys.flash_id = W25Q_Init();
-	//if ( Asys.flash_id )
-		//Asys.flash_on_board = ASYS_FLASH_FOUND;
-	W25Q_ReadID(qspi_id);
+	Asys.qspi_id = w25q_Init();
 	return NULL;
 }
 

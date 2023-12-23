@@ -1425,7 +1425,6 @@ W25Q_STATE W25Q_WriteEnable(bool enable) {
 	com.NbData = 0;
 
 	com.DdrMode = QSPI_DDR_MODE_DISABLE;
-	com.DdrHoldHalfCycle = QSPI_DDR_HHC_ANALOG_DELAY;
 	com.SIOOMode = QSPI_SIOO_INST_EVERY_CMD;
 
 	if (HAL_QSPI_Command(&hqspi, &com, HAL_QSPI_TIMEOUT_DEFAULT_VALUE)
