@@ -51,7 +51,6 @@ LWIP:
 ../../A_Libraries/Drivers/STM32H5/LWIP/Target
 ../../A_Libraries/ExternalLibraries/STM32H5/LwIP/system
 ../../A_Libraries/ExternalLibraries/STM32H5/LwIP/src/include
-../../A_Libraries/Components/lan8742
 NFC:
 CRC and SPI1 must be enabled
 SPI1 must have PLL3P @ 40 MHz ( DIVN 100 DIVQ10 ), 2 edges, 8 bit, motorola format -> 5MHz clock
@@ -82,7 +81,6 @@ LWIP
 ../../A_Libraries/Drivers/STM32F7/LwIP/Target
 ../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include
 ../../A_Libraries/ExternalLibraries/STM32F7/LwIP/system
-../../A_Libraries/Drivers/Common/Components/Network/lan8742
 ../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/netif/ppp
 ../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/lwip
 ../../A_Libraries/ExternalLibraries/STM32F7/LwIP/src/include/lwip/apps
@@ -98,6 +96,31 @@ LWIP
 FAT
 ../../A_Libraries/ExternalLibraries/STM32F7/FatFs/src
 ../../A_Libraries/Drivers/STM32F7/FatFS/Target
+
+STM32H7 includes
+USB:
+../../A_Libraries/Drivers/STM32H7/USB_Host/Target
+../../A_Libraries/Drivers/STM32H7/USB_Host/App
+../../A_Libraries/Drivers/STM32H7/USB_Device/App
+../../A_Libraries/Drivers/STM32H7/USB_Device/Target
+../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Device_Library/Class/CDC/Inc
+../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Class/AUDIO/Inc
+../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Class/CDC/Inc
+../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Class/HID/Inc
+../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Class/MSC/Inc
+../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Class/MTP/Inc
+../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Core/Inc
+../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Device_Library/Core/Inc
+LWIP
+../../A_os/drivers/rmii
+../../A_Libraries/Drivers/STM32H7/LwIP/App
+../../A_Libraries/Drivers/STM32H7/LwIP/Target
+../../A_Libraries/ExternalLibraries/STM32H7/LwIP/src/include
+../../A_Libraries/ExternalLibraries/STM32H7/LwIP/src/include/lwip
+../../A_Libraries/ExternalLibraries/STM32H7/LwIP/system
+FAT
+../../A_Libraries/Drivers
+../../A_Libraries/ExternalLibraries/STM32H7/FatFs/src
 
 */
 #endif /* INCLUDE_PATHS_H_ */
