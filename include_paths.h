@@ -99,18 +99,10 @@ FAT
 
 STM32H7 includes
 USB:
-../../A_Libraries/Drivers/STM32H7/USB_Host/Target
-../../A_Libraries/Drivers/STM32H7/USB_Host/App
 ../../A_Libraries/Drivers/STM32H7/USB_Device/App
 ../../A_Libraries/Drivers/STM32H7/USB_Device/Target
-../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Device_Library/Class/CDC/Inc
-../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Class/AUDIO/Inc
-../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Class/CDC/Inc
-../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Class/HID/Inc
-../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Class/MSC/Inc
-../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Class/MTP/Inc
-../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Host_Library/Core/Inc
 ../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Device_Library/Core/Inc
+../../A_Libraries/ExternalLibraries/STM32H7/STM32_USB_Device_Library/Class/CDC/Inc
 LWIP
 ../../A_os/drivers/rmii
 ../../A_Libraries/Drivers/STM32H7/LwIP/App
